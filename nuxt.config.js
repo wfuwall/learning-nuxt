@@ -2,7 +2,11 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  transition: {
+    // 动画的配置
+    name: 'page',
+    mode: 'out-in'
+  },
   /*
    ** Headers of the page
    */
@@ -24,7 +28,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: ['~assets/common.css', 'element-ui/lib/theme-chalk/index.css'],
 
   /*
    ** Plugins to load before mounting the App
