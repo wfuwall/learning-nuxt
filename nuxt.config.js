@@ -19,6 +19,9 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  router: {
+    middleware: 'router'
+  },
 
   /*
    ** Customize the progress-bar color
@@ -33,7 +36,10 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+  plugins: [
+    '@/plugins/element-ui',
+    '@/plugins/axios' // 增加axios插件
+  ],
 
   /*
    ** Nuxt.js modules
