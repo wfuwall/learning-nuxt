@@ -23,7 +23,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#3338f7' },
+  loading: '@/components/Loading',
 
   /*
    ** Global CSS
@@ -48,6 +48,11 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+  // 配置启动的端口号个域名
+  server: {
+    port: 8100, // default: 3000
+    host: '0.0.0.0' // default: localhost,
   },
 
   /*
