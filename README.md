@@ -34,3 +34,34 @@ $ npm run generate
   - ~~ 或 @@   根目录
 > 默认情况下，src目录和根目录相同。在 vue 模板中, 如果你需要引入 assets 或者 static 目录, 使用 ~/assets/your_image.png 和 ~/static/your_image.png方式。 
 - nuxt.js 的常用配置 请查看nuxt.config.js文件
+
+### context 上下文对象常用属性
+- app       包含所有插件的 Vue 根实例, 可以通过 context.app.$axios 来获取axios的实例
+- $axios    axios的实例
+- store     vuex实例
+- route     vue-router的实例
+- from      上个页面的router实例
+- req       Node.js API 的 Request 对象
+- res       Node.js API 的 Response 对象
+- error     用这个方法展示错误页：error(params) 。params 参数应该包含 statusCode 和 message 字段
+- env       nuxt.config.js 中配置的环境变量
+- isStatic  是否来自 nuxt generate 静态化（预渲染）（即将废弃，isClient、isServer已经废弃，使用 process.static、process.client、process.server 代替）
+- isDev     是否是开发模式，在生产环境的数据缓存中用到
+
+### pages页面属性
+- asyncData 服务端和客户端都能执行,渲染组件之前异步获取数据
+- fetch     服务端和客户端都执行，一般只用来操作vuex,填充应用的状态树（store）数据
+- head      head 方法设置当前页面的头部标签。需要使用 hid 键为meta标签配一个唯一的标识编号
+- layout    指定页面使用哪种布局
+- loading   禁用特定页面上的默认加载进度条的选项
+- middleware 指定页面使用哪个中间件
+- scrollToTop 控制页面在渲染前是否滚动到顶部 
+- transition  实现路由切换时的过渡动效
+- validate   此方法用来校验动态路由参数的有效性
+- watchQuery 监听参数字符串更改并在更改时执行组件方法 (asyncData, fetch, validate, layout, ...)
+
+### nuxt内部组件
+- nuxt组件    只适用于在布局中显示页面组件
+- nuxt-child组件   用于显示嵌套路由场景下的页面内容
+- nuxt-link组件    用于在页面中添加链接至别的页面
+- no-ssr组件       用于设置组件不在服务器渲染中呈现

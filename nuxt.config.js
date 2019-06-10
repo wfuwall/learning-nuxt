@@ -7,9 +7,6 @@ module.exports = {
     name: 'page',
     mode: 'out-in'
   },
-  /*
-   ** Headers of the page
-   */
   head: {
     title: pkg.name,
     meta: [
@@ -22,36 +19,22 @@ module.exports = {
   router: {
     middleware: 'router'
   },
-
-  /*
-   ** Customize the progress-bar color
-   */
   loading: '@/components/Loading',
-
-  /*
-   ** Global CSS
-   */
-  css: ['~assets/common.css', 'element-ui/lib/theme-chalk/index.css'],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
+  // 引入全局的（所有页面均需引用的）样式文件
+  css: [
+    '~assets/common.css',
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/reset.css'
+  ],
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/axios' // 增加axios插件
   ],
-
-  /*
-   ** Nuxt.js modules
-   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
-  /*
-   ** Axios module configuration
-   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
@@ -60,16 +43,9 @@ module.exports = {
     port: 8100, // default: 3000
     host: '0.0.0.0' // default: localhost,
   },
-
-  /*
-   ** Build configuration
-   */
   build: {
+    analyze: true,
     transpile: [/^element-ui/],
-
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

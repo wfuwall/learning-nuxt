@@ -4,6 +4,7 @@
     <!-- 刷新页面 会通过服务端返回页面 -->
     <nuxt-link to="/">首页</nuxt-link> |
     <nuxt-link to="/detail">详情</nuxt-link> |
+    <nuxt-link to="/todo">todo</nuxt-link> |
     <nuxt-link to="/user">用户</nuxt-link> |
     <nuxt-link to="/user/1">用户1</nuxt-link> |
     <nuxt-link to="/user/2">用户2</nuxt-link> |

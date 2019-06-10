@@ -2,7 +2,7 @@ export default context => {
   const { $axios, redirect } = context
   $axios.onRequest(config => {
     // axios的请求拦截器
-    console.log(config)
+    // console.log(config)
   })
   $axios.onError(error => {
     // 报错拦截器
